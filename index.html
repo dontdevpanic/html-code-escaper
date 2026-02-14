@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="de">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description"
+            content="HTML Code Escaper - Konvertiere HTML-Code zu sichtbarem Text für Webseiten und Dokumentationen">
+        <title>HTML Escaper - Code sichtbar machen</title>
+        <link rel="icon" type="image/svg+xml" href="/img/favicon.svg">
+        <link rel="alternate icon" type="image/png" href="/img/favicon.png">
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <header class="navbar">
+            <nav class="nav-container">
+                <div class="nav-logo">
+                    <img src="/img/favicon.svg" alt="HTML Escaper Logo" class="logo-icon">
+                    <span class="logo-text">HTML Code Escaper</span>
+                </div>
+                <div class="nav-links">
+                    <a href="https://github.com/dontdevpanic/html-escape-tool" target="_blank" rel="noopener"
+                        class="nav-link">
+                        <span>GitHub</span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                            <path
+                                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+                        </svg>
+                    </a>
+                </div>
+            </nav>
+        </header>
+        <div class="container">
+            <div class="hero">
+                <h1>HTML Code Escaper</h1>
+                <p class="subtitle">Mach deinen Code sichtbar - einfach, schnell und ohne Aufwand</p>
+            </div>
+
+            <!-- Code Escaper Tool -->
+            <section class="content-section tool-section">
+                <div class="code-block html-escaper">
+                    <div class="code-header">
+                        <span class="code-lang">HTML Escaper</span>
+                        <div class="code-actions">
+                            <button class="code-copy escape-btn" title="HTML-Code escapen">
+                                <span class="copy-text">Escapen</span>
+                                <span class="copy-icon">
+                                    <img src="/img/escape.svg" alt="Escape Code Icon" width="16" height="16">
+                                </span>
+                            </button>
+                            <button class="code-copy unescape-btn" title="Escaped Code zurückkonvertieren">
+                                <span class="copy-icon">
+                                    <img src="/img/unescape.svg" alt="Unescape Code Icon" width="16" height="16">
+                                </span>
+                                <span class="copy-text">Unescapen</span>
+                            </button>
+                            <button class="code-copy copy-btn" title="In Zwischenablage kopieren">
+                                <span class="copy-text">Kopieren</span>
+                                <span class="copy-icon">
+                                    <img src="/img/clipboard.svg" alt="Copy Icon" width="16" height="16">
+                                </span>
+                            </button>
+                            <button class="code-copy clear-btn" title="Alles löschen">
+                                <span class="copy-text">Löschen</span>
+                                <span class="copy-icon">
+                                    <img src="/img/delete.svg" alt="Clear Icon" width="16" height="16">
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <textarea class="code-input" placeholder="Füge hier deinen HTML-Code ein..."
+                        spellcheck="false"></textarea>
+                    <textarea class="code-output" placeholder="Hier erscheint der escaped Code..." readonly
+                        spellcheck="false"></textarea>
+
+                </div>
+            </section>
+
+
+            <!-- Intro -->
+            <section class="content-section explain">
+                <h2 id="was-bedeutet-escapen">Was bedeutet "Escapen"?</h2>
+                <p>Wenn du HTML-Code auf einer Webseite zeigen willst, interpretiert der Browser ihn
+                    normalerweise als echtes HTML. Um das zu verhindern, ersetzt du bestimmte Zeichen durch ihre
+                    HTML-Entities:</p>
+
+                <div class="grid-2col">
+                    <div>
+                        <ul class="arrow-list">
+                            <li><code>&lt;</code> wird zu <code>&amp;lt;</code></li>
+                            <li><code>&gt;</code> wird zu <code>&amp;gt;</code></li>
+                            <li><code>&amp;</code> wird zu <code>&amp;amp;</code></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul class="arrow-list">
+                            <li><code>"</code> wird zu <code>&amp;quot;</code></li>
+                            <li><code>'</code> wird zu <code>&amp;#39;</code></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <p>So wird aus <code>&lt;div&gt;</code> der Text <code>&amp;lt;div&amp;gt;</code>,
+                    der dann als lesbarer Code angezeigt wird.
+                </p>
+                <p>Je nach Umfang kann das sehr zeitaufwendig werden, daher gibt es hier dieses kleine Tool.</p>
+            </section>
+
+            <!-- Unescape & Advanced Usage -->
+            <section class="content-section">
+                <h2 id="escape-und-unescape">Escape & Unescape</h2>
+                <p>Das Tool funktioniert in beide Richtungen:</p>
+
+                <div class="grid-2col">
+                    <div>
+                        <h3>→ Escapen</h3>
+                        <p>Konvertiert HTML-Code in sichtbaren Text:</p>
+                        <p><code>&lt;div&gt;</code> → <code>&amp;lt;div&amp;gt;</code></p>
+                    </div>
+
+                    <div>
+                        <h3>← Unescapen</h3>
+                        <p>Konvertiert escaped Code zurück in HTML:</p>
+                        <p><code>&amp;lt;div&amp;gt;</code> → <code>&lt;div&gt;</code></p>
+                    </div>
+                </div>
+
+                <hr>
+                <h3>Pro-Tipp: Mehrfach-Escapen</h3>
+                <p>Du kannst Code auch <strong>mehrfach escapen</strong> - das ist super nützlich, wenn du zeigen
+                    willst,
+                    <em>wie</em> Escapen funktioniert!
+                </p>
+
+                <div class="example-box">
+                    <p><strong>Beispiel:</strong></p>
+                    <ol class="arrow-list">
+                        <li>Start: <code>&lt;div&gt;</code></li>
+                        <li>1× Escapen: <code>&amp;lt;div&amp;gt;</code></li>
+                        <li>2× Escapen: <code>&amp;amp;lt;div&amp;amp;gt;</code></li>
+                        <li>1× Unescapen: <code>&amp;lt;div&amp;gt;</code></li>
+                        <li>2× Unescapen: <code>&lt;div&gt;</code></li>
+                    </ol>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-secondary);">
+                        So kannst du in Tutorials zeigen, dass <code>&amp;lt;</code> zu <code>&lt;</code> wird,
+                        ohne dass der Browser es direkt umsetzt!
+                    </p>
+                </div>
+            </section>
+
+            <footer class="footer">
+                <p>Made with ☕ | <a href="https://github.com/dontdevpanic/html-escape-tool" target="_blank"
+                        rel="noopener">View on GitHub</a></p>
+            </footer>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+
+</html>

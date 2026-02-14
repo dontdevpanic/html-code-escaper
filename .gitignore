@@ -1,0 +1,32 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows (für Contributors)
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node/npm (falls später genutzt)
+node_modules/
+npm-debug.log*
+package-lock.json
+
+# Environment & Secrets
+.env
+.env.local
+
+# Logs
+*.log
+
+# Custom
+NOUPLOAD/
