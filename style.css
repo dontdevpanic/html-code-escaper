@@ -280,7 +280,7 @@ hr {
 
 .nav-links {
     display: flex;
-    gap: 1.5rem;
+    gap: 0.5rem;
     align-items: center;
     line-height: 1;
 }
@@ -314,6 +314,11 @@ hr {
 
 .nav-link:hover svg {
     transform: scale(1.05);
+}
+
+.lang-switch {
+    font-weight: 600;
+    border: 1px solid var(--border-color);
 }
 
 /* ============================================
@@ -396,6 +401,8 @@ hr {
     transition: all 0.2s ease;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
     white-space: nowrap;
+    min-width: 130px;
+    justify-content: center;
 }
 
 .code-copy:hover {
@@ -577,6 +584,23 @@ hr {
     .clear-btn {
         grid-column: span 1;
     }
+
+    .lang-switch span {
+        display: inline;
+    }
+}
+
+@media (max-width: 420px) {
+
+    .logo-text {
+        display: none;
+    }
+
+    .code-actions {
+        grid-template-columns: 1fr;
+        /* <- Nur noch 1 Spalte! */
+    }
+
 }
 
 /* ============================================

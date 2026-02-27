@@ -14,13 +14,13 @@ document.querySelectorAll('.html-escaper').forEach(block => {
     const messageElement = block.querySelector('.escape-message');
 
     // Escape level messages (null = no message)
-    const escapeMessages = [
-        null,  // Level 1: no message
-        "💡 Nochmal? Na gut! 🤔",
-        "😅 Okay... schon 3× escaped!",
-        "🙃 Echt jetzt? Das wird langsam wild!",
-        "🤯 STOPP! Mehr macht keinen Sinn! Maximum erreicht."
-    ];
+    // const escapeMessages = [
+    //     null,  
+    //     "💡 Nochmal? Na gut! 🤔",
+    //     "😅 Okay... schon 3× escaped!",
+    //     "🙃 Echt jetzt? Das wird langsam wild!",
+    //     "🤯 STOPP! Mehr macht keinen Sinn! Maximum erreicht."
+    // ];
 
     /**
      * Count how many times the text has been escaped
@@ -149,7 +149,7 @@ document.querySelectorAll('.html-escaper').forEach(block => {
             showMessage(escapeMessages[currentLevel]);
         }
 
-        showButtonFeedback(escapeBtn, 'Escapen →', 'Fertig!');
+        showButtonFeedback(escapeBtn, 'Escapen', 'Fertig!');
     });
 
     // Unescape button click handler
@@ -161,7 +161,7 @@ document.querySelectorAll('.html-escaper').forEach(block => {
         output.focus();
         output.select();
 
-        showButtonFeedback(unescapeBtn, '← Unescapen', 'Fertig!');
+        showButtonFeedback(unescapeBtn, 'Unescapen', 'Fertig!');
     });
 
     // Copy button click handler

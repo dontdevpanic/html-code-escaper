@@ -1,113 +1,116 @@
 # HTML Escape Tool
 
-**Ein simples, aber nützliches Tool zum Escapen von HTML-Code**
+**A simple yet powerful tool for escaping and unescaping HTML code**
 
-Wenn du HTML-Code auf einer Webseite darstellen möchtest, ohne dass der Browser ihn interpretiert, musst du die Sonderzeichen "escapen". Dieses Tool macht das automatisch für dich - in beide Richtungen.
+When you want to display HTML code on a website without the browser interpreting it, you need to "escape" the special characters. This tool does it automatically for you - in both directions!
 
+**[🇩🇪 Deutsche Version / German Version](README.de.md)**
 
 ## Live Demo
 
-**[HTML Escaper ausprobieren](https://dontdevpanic.github.io/html-code-escaper/)**
+**[Try HTML Code Escaper](https://dontdevpanic.github.io/html-code-escaper/)**
 
 ## Features
 
-- **Bidirektional** - Escape und Unescape in beide Richtungen
-- **Mehrfach-Escapen** - Perfekt für Meta-Tutorials (zeigen WIE man escaped)
-- **One-Click Copy** - Kopiere das Ergebnis direkt in die Zwischenablage
-- **Dark Mode** - Automatische Anpassung an dein System-Theme
-- **Responsive** - Funktioniert perfekt auf Desktop, Tablet und Mobile
-- **Accessible** - Tastatursteuerung und moderne Web-Standards
+- **Bidirectional** - Escape and unescape in both directions
+- **Multi-level escaping** - Perfect for meta-tutorials (show HOW escaping works)
+- **Bilingual** - Available in English and German
+- **One-click copy** - Copy result directly to clipboard
+- **Dark mode** - Automatic system theme adaptation
+- **Responsive** - Works perfectly on desktop, tablet, and mobile
+- **Accessible** - Keyboard navigation and modern web standards
+- **Privacy-friendly** - No tracking, no cookies, no analytics
 
-## Was macht es?
+## What Does It Do?
 
-Das Tool konvertiert HTML-Sonderzeichen in ihre Entity-Äquivalente und zurück:
+The tool converts HTML special characters to their entity equivalents - and back:
 
-| Zeichen | Wird zu      |
-|---------|--------------|
-| `<`     | `&lt;`       |
-| `>`     | `&gt;`       |
-| `&`     | `&amp;`      |
-| `"`     | `&quot;`     |
-| `'`     | `&#39;`      |
+| Character | Becomes      |
+|-----------|--------------|
+| `<`       | `&lt;`       |
+| `>`       | `&gt;`       |
+| `&`       | `&amp;`      |
+| `"`       | `&quot;`     |
+| `'`       | `&#39;`      |
 
-**Beispiel:**
+**Example:**
 ```html
-Input:  <div class="container">Hello World</div>
-Output: &lt;div class=&quot;container&quot;&gt;Hello World&lt;/div&gt;
+Input:  Hello World
+Output: <div class="container">Hello World</div>
 ```
 
-**Mehrfach-Escapen für Tutorials:**
+**Multi-level escaping for tutorials:**
 ```html
-<div>                           → Original
-&lt;div&gt;                   → 1× escaped
-&amp;lt;div&amp;gt;           → 2× escaped (zeigt wie Escapen funktioniert)
-````
+                           → Original
+<div>                   → 1× escaped
+&lt;div&gt;           → 2× escaped (shows how escaping works!)
+```
 
 ## Usage
 
-### Online nutzen
-Einfach die [Live-Demo](https://dontdevpanic.github.io/html-code-escaper/) öffnen und loslegen!
+### Use Online
+Simply open the [Live Demo](https://dontdevpanic.github.io/html-code-escaper/) and get started!
 
-### Lokal ausführen
+### Run Locally
 
-1. **Repository klonen:**
+1. **Clone repository:**
    ```bash
    git clone https://github.com/dontdevpanic/html-code-escaper.git
    cd html-code-escaper
    ```
 
-2. **Im Browser öffnen:**
-   - Öffne `index.html` direkt im Browser
-   - Oder nutze einen lokalen Server:
+2. **Open in browser:**
+   - Open `index.html` directly in your browser
+   - Or use a local server (recommended):
      ```bash
      # Python 3
      python -m http.server 8000
      
-     # Node.js (mit http-server)
+     # Node.js (with http-server)
      npx http-server
      ```
 
-3. **Fertig!**
+3. **Done!** 🎉
 
-## Anpassung
+## Customization
 
-Das Tool ist bewusst einfach gehalten und kann leicht angepasst werden:
+The tool is intentionally simple and easy to customize:
 
-- **Farben ändern:** Bearbeite die CSS-Variablen in `styles.css` (`:root`)
-- **Icons austauschen:** Ersetze die SVGs im `/img/` Ordner
-- **Funktionalität erweitern:** Bearbeite `script.js`
+- **Change colors:** Edit CSS variables in `style.css` (`:root`)
+- **Replace icons:** Swap SVGs in the `/img/` folder
+- **Extend functionality:** Edit `script.js`
 
 ## Tech Stack
 
-- **HTML5** - Semantisches Markup
-- **CSS3** - Modern, responsive, mit CSS Custom Properties
-- **Vanilla JavaScript** - Keine Dependencies, moderne ES6+ Features
-- **Clipboard API** - Modernes Copy-to-Clipboard (mit Fallback)
+- **HTML5** - Semantic markup
+- **CSS3** - Modern, responsive, with CSS Custom Properties
+- **Vanilla JavaScript** - No dependencies, modern ES6+ features
+- **Clipboard API** - Modern copy-to-clipboard (with fallback)
 
 ## Development
 
-Dieses Projekt wurde mit Unterstützung von AI-Tools entwickelt. Der Code nutzt moderne Web-Standards und Best Practices:
+This project was developed with the support of AI tools. The code uses modern web standards and best practices:
 
-- Moderne Clipboard API (mit Fallback für ältere Browser)
-- Bidirektionales Escape/Unescape
-- Mehrfach-Escapen für Meta-Beispiele
-- Responsive Design
-- Dark Mode Support via `prefers-color-scheme`
-- WCAG-konforme Kontraste
+- Modern Clipboard API (with fallback for older browsers)
+- Bidirectional escape/unescape
+- Multi-level escaping for meta-examples
+- Responsive design
+- Dark mode support via `prefers-color-scheme`
+- WCAG-compliant contrasts
 
 ## Use Cases
 
-- **Code-Snippets in Blogs** darstellen
-- **Tutorial-Dokumentationen** erstellen (inkl. Meta-Beispiele)
-- **Stack Overflow Antworten** formatieren
-- **HTML-Beispiele** auf Webseiten zeigen
-- **Code-Reviews** vorbereiten
+- **Display code snippets** in blogs
+- **Create tutorial documentation** (including meta-examples!)
+- **Format Stack Overflow answers**
+- **Show HTML examples** on websites
+- **Prepare code reviews**
 
-**Pro-Tipp:** Nutze die Escape/Unescape-Buttons mehrfach hintereinander, um in Tutorials zu zeigen, wie HTML-Entities funktionieren!
+**Pro tip:** Use the Escape/Unescape buttons multiple times in a row to demonstrate how HTML entities work in tutorials!
 
 ## Feedback
 
-Fehler gefunden oder Ideen? Öffne gerne ein [Issue](https://github.com/dontdevpanic/html-code-escaper/issues)!
+Found a bug or have ideas? Feel free to open an [Issue](https://github.com/dontdevpanic/html-code-escaper/issues)!
 
 ## License
 
@@ -115,4 +118,8 @@ MIT License - feel free to use this in your own projects!
 
 ## Credits
 
-Entwickelt von Bianca Schlich mit ☕ und modernen Web-Technologien.
+Built by Bianca Schlich with ☕ and modern web technologies.
+
+---
+
+**Available in:** [🇬🇧 English](README.md) | [🇩🇪 Deutsch](README.de.md)
