@@ -14,7 +14,7 @@ When you want to display HTML code on a website without the browser interpreting
 
 - **Bidirectional** - Escape and unescape in both directions
 - **Multi-level escaping** - Perfect for meta-tutorials (show HOW escaping works)
-- **Bilingual** - Available in English and German
+- **Bilingual** - Available in English and German with automatic language detection
 - **One-click copy** - Copy result directly to clipboard
 - **Dark mode** - Automatic system theme adaptation
 - **Responsive** - Works perfectly on desktop, tablet, and mobile

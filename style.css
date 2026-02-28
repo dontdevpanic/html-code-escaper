@@ -13,11 +13,11 @@
 :root {
     /* Light Mode Colors */
     --bg-primary: #ededed;
-    --bg-secondary: #dddddd;
+    --bg-secondary: #e1e1e1;
     --bg-code: #f5f5f5;
     --text-primary: #212121;
     --text-secondary: #595959;
-    --border-color: #d0d0d0;
+    --border-color: #cacaca;
     --shadow: rgba(0, 0, 0, 0.1);
 
     /* Accent Colors */

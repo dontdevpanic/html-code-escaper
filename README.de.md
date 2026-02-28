@@ -13,7 +13,7 @@ Wenn du HTML-Code auf einer Webseite darstellen möchtest, ohne dass der Browser
 
 - **Bidirektional** - Escape und Unescape in beide Richtungen
 - **Mehrfach-Escapen** - Perfekt für Meta-Tutorials (zeigen WIE man escaped)
-- **Zweisprachig** - Verfügbar auf Deutsch und Englisch
+- **Zweisprachig** - Verfügbar auf Deutsch und Englisch mit automatischer Spracherkennung
 - **One-Click Copy** - Kopiere das Ergebnis direkt in die Zwischenablage
 - **Dark Mode** - Automatische Anpassung an dein System-Theme
 - **Responsive** - Funktioniert perfekt auf Desktop, Tablet und Mobile

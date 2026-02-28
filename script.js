@@ -12,6 +12,36 @@ document.querySelectorAll('.html-escaper').forEach(block => {
     const copyBtn = block.querySelector('.copy-btn');
     const clearBtn = block.querySelector('.clear-btn');
 
+    // Detect language from HTML tag
+    const lang = document.documentElement.lang || 'de';
+
+    // Button labels based on language
+    const labels = {
+        de: {
+            escape: 'Escapen',
+            unescape: 'Unescapen',
+            copy: 'Kopieren',
+            clear: 'Löschen',
+            done: 'Fertig!',
+            copied: 'Kopiert!',
+            cleared: 'Gelöscht!',
+            error: 'Fehler!'
+        },
+        en: {
+            escape: 'Escape',
+            unescape: 'Unescape',
+            copy: 'Copy',
+            clear: 'Clear',
+            done: 'Done!',
+            copied: 'Copied!',
+            cleared: 'Cleared!',
+            error: 'Error!'
+        }
+    };
+
+    // Get labels for current language (fallback to 'en')
+    const t = labels[lang] || labels.en;
+
     /**
      * Escapes HTML special characters
      * @param {string} str - The string to escape
@@ -86,53 +116,49 @@ document.querySelectorAll('.html-escaper').forEach(block => {
         }, 1500);
     }
 
+
+
+
     // Escape button click handler
     escapeBtn.addEventListener('click', () => {
-        // Use output if it has content, otherwise use input
         const sourceText = output.value || input.value;
-
-        // Escape the text
         const escaped = escapeHTML(sourceText);
         output.value = escaped;
         output.focus();
         output.select();
 
-        showButtonFeedback(escapeBtn, 'Escapen', 'Fertig!');
+        showButtonFeedback(escapeBtn, t.escape, t.done);
     });
 
-    // Unescape button click handler
+    // Unescape button
     unescapeBtn.addEventListener('click', () => {
-        // Use output if it has content, otherwise use input
         const sourceText = output.value || input.value;
         const unescaped = unescapeHTML(sourceText);
         output.value = unescaped;
         output.focus();
         output.select();
 
-        showButtonFeedback(unescapeBtn, 'Unescapen', 'Fertig!');
+        showButtonFeedback(unescapeBtn, t.unescape, t.done);
     });
 
-    // Copy button click handler
+    // Copy button
     copyBtn.addEventListener('click', async () => {
-        if (!output.value) {
-            return; // Nothing to copy
-        }
-
+        if (!output.value) return;
         const success = await copyToClipboard(output.value);
 
         if (success) {
-            showButtonFeedback(copyBtn, 'Kopieren', 'Kopiert!');
+            showButtonFeedback(copyBtn, t.copy, t.copied);
         } else {
-            showButtonFeedback(copyBtn, 'Kopieren', 'Fehler!');
+            showButtonFeedback(copyBtn, t.copy, t.error);
         }
     });
 
-    // Clear button click handler
+    // Clear button
     clearBtn.addEventListener('click', () => {
         input.value = '';
         output.value = '';
         input.focus();
 
-        showButtonFeedback(clearBtn, 'Löschen', 'Gelöscht!');
+        showButtonFeedback(clearBtn, t.clear, t.cleared);
     });
 });
