@@ -11,43 +11,6 @@ document.querySelectorAll('.html-escaper').forEach(block => {
     const unescapeBtn = block.querySelector('.unescape-btn');
     const copyBtn = block.querySelector('.copy-btn');
     const clearBtn = block.querySelector('.clear-btn');
-    const messageElement = block.querySelector('.escape-message');
-
-    // Escape level messages (null = no message)
-    // const escapeMessages = [
-    //     null,  
-    //     "💡 Nochmal? Na gut! 🤔",
-    //     "😅 Okay... schon 3× escaped!",
-    //     "🙃 Echt jetzt? Das wird langsam wild!",
-    //     "🤯 STOPP! Mehr macht keinen Sinn! Maximum erreicht."
-    // ];
-
-    /**
-     * Count how many times the text has been escaped
-     * by counting &amp; sequences
-     */
-    function getEscapeLevel(str) {
-        if (!str) return 0;
-        const ampCount = (str.match(/&amp;/g) || []).length;
-        const ltCount = (str.match(/&lt;/g) || []).length;
-        // Use the higher count as the escape level indicator
-        return Math.max(ampCount, ltCount);
-    }
-
-    /**
-     * Show a temporary message banner
-     */
-    function showMessage(text) {
-        if (!text || !messageElement) return;
-
-        messageElement.textContent = text;
-        messageElement.classList.add('show');
-
-        // Auto-hide after 3 seconds
-        setTimeout(() => {
-            messageElement.classList.remove('show');
-        }, 3000);
-    }
 
     /**
      * Escapes HTML special characters
@@ -128,26 +91,11 @@ document.querySelectorAll('.html-escaper').forEach(block => {
         // Use output if it has content, otherwise use input
         const sourceText = output.value || input.value;
 
-        // Check escape level BEFORE escaping
-        const currentLevel = getEscapeLevel(sourceText);
-
-        // Block at level 5 (already escaped 4 times)
-        if (currentLevel >= 4) {
-            showMessage(escapeMessages[4]); // "STOPP! Maximum erreicht"
-            showButtonFeedback(escapeBtn, 'Escapen →', 'Maximum! 🤯');
-            return; // Don't escape further
-        }
-
         // Escape the text
         const escaped = escapeHTML(sourceText);
         output.value = escaped;
         output.focus();
         output.select();
-
-        // Show message for levels 1-3
-        if (currentLevel >= 1 && currentLevel < 4) {
-            showMessage(escapeMessages[currentLevel]);
-        }
 
         showButtonFeedback(escapeBtn, 'Escapen', 'Fertig!');
     });
